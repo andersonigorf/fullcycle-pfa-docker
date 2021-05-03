@@ -31,17 +31,34 @@ Execute os comandos:
   # 2 - Executar container MySQL 
   docker run --rm -d --name db --network pfa-network andersonigorf/pfa-mysql --innodb_use_native_aio=0
 
-  # 3 - Executar script do banco
-  docker exec -it db bash
-  mysql -uroot -proot < create_modulos_table.sql
-  exit
-
-  # 4 - Executar container Node.js
+  # 3 - Executar container Node.js
   docker run --rm -d --name app --network pfa-network andersonigorf/pfa-node
 
-  # 5 - Executar container Nginx
+  # 4 - Executar container Nginx
   docker run --rm -d --name nginx -p 8080:80 --network pfa-network andersonigorf/pfa-nginx
 
-  # 6 - Acessar a aplicação
+  # 5 - Acessar a aplicação
   http://localhost:8080
+```
+
+## Desafio 02
+
+Nginx + Node.js + MySQL (Docker Compose)
+
+### Rodar a aplicação
+
+Execute os comandos:
+
+```bash
+  # 1 - Clonar o repositório do projeto
+  git clone https://github.com/andersonigorf/fullcycle-pfa-docker.git
+
+  # 2 - Acessar o diretório desafio-02
+  cd desafio-02
+
+  # 3 - Executar o docker compose (Aguardar inicialização dos containers)
+  docker-compose up
+
+  # 4 - Acessar a aplicação
+  http://localhost:8000
 ```
