@@ -4,4 +4,4 @@ ENV MYSQL_ROOT_PASSWORD root
 ENV MYSQL_DATABASE nodedb 
 ENV LANG=C.UTF-8
 
-COPY ./scripts .
+COPY ./scripts /docker-entrypoint-initdb.d/
